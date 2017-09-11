@@ -2,12 +2,12 @@
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
 
-You're reading it!
+Please see below.
 
 ### Exercise 1, 2 and 3 pipeline implemented
 #### 1. Complete Exercise 1 steps. Pipeline for filtering and RANSAC plane fitting implemented.
 
-[Here is a link to my python script for all exercises & the project.](https://github.com/priteshgudge/pick_place_3dperception/blob/master/pr2_robot/scripts/)
+[Here is a link to my python script for all exercises & the project.](https://github.com/priteshgudge/pick_place_3dperception/blob/master/pr2_robot/scripts/project_impl_script_2.py)
 
 
 
@@ -16,7 +16,7 @@ My pipeline is as follows:
 Image -> Voxel Grid Downsampling -> Passthrough over Z-Axis -> Passthrough over X-Axis -> Outlier Filter ->
 RANSAC PLANE Filter -> Done
 
-For each of these sections, I'll list my observactions:
+For each of these sections, I'll list my observations:
 
 **Voxel Grid:** The hardest thing to learn here was what the LEAF_SIZE actually meant. I kept thinking it meant that
 something like "1" meant one point in each "area." I didn't realize that the leaf is actually defining the "area."  
@@ -31,7 +31,7 @@ to mess with this one some more.
 
 Here is what the cloud looked like after the pipeline:
 
-![After Pipeline1](https://github.com/tiedyedguy/RoboND-Perception-Project/raw/master/images/afterpipeline1.png)
+![After Pipeline1](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/afterpipeline1.png)
 
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
 
@@ -40,7 +40,7 @@ I had to mess around with the values a lot more until I got things that worked.
 
 Here is what the cloud looked like after the pipeline:
 
-![After Pipeline2](https://github.com/tiedyedguy/RoboND-Perception-Project/raw/master/images/afterpipeline2.png)
+![After Pipeline2](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/afterpipeline2.png)
 
 #### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
 
@@ -73,23 +73,21 @@ First, the results:
 
 World 1 100%:
 
-![World1](https://github.com/tiedyedguy/RoboND-Perception-Project/raw/master/images/world1.png)
+![World1](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/world1.png)
 
-YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_1.yaml)
+YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_files/output_1.yaml)
 
 World 2 100%:
 
 ![World2](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/world2.png)
 
-YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_2.yaml)
+YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_files/output_2.yaml)
 
 World 3 87.5%:
 
 ![World3](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/world3.png)
 
-YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_3.yaml)
+YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_files/output_3.yaml)
 
 Now, my thoughts:
- The only major challenge I found was upping
-the number of features from 500 to 6400 in the training.  This got me 100%  accuracy in world 1, 100% accuracy in world 2 and 87.5% accuracy in World 3
-
+The project was quite challenging. I would have preferred more details into the algorithms/methods used for filtering.
