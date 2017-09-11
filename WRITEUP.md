@@ -11,23 +11,20 @@ Please see below.
 
 
 
-My pipeline is as follows:
+The pipeline is below:
 
-Image -> Voxel Grid Downsampling -> Passthrough over Z-Axis -> Passthrough over X-Axis -> Outlier Filter ->
+Image -> Statistical Outlier Filter --> Voxel Grid Downsampling -> Passthrough over Z-Axis -> Passthrough over Y-Axis  ->
 RANSAC PLANE Filter -> Done
 
-For each of these sections, I'll list my observations:
+Observations Below:
 
-**Voxel Grid:** The hardest thing to learn here was what the LEAF_SIZE actually meant. I kept thinking it meant that
-something like "1" meant one point in each "area." I didn't realize that the leaf is actually defining the "area."  
+**Voxel Grid:** Leaf size is the area for the voxel grid. Interesting!
 
-**Passthrough Filters:** The biggest killer to me on this one was remembering the right hand rule when I was learning
-it.  This one is pretty easy, but will be my biggest challenge when I take the challenge_world.
+**Passthrough Filters:** It is important to note Right Hand Rule for the Axis. 
 
-**Outlier Filter:** After the working python_pcl was given to us, this one is so simple that it isn't worth mentioning.
+**Outlier Filter:** Straightforward with python_pcl
 
-**RANSAC PLANE FILTER:** This one still perplexes me.  I understand the concept, just not really how it works, I need
-to mess with this one some more.
+**RANSAC PLANE FILTER:** Plane intuition is easy to understand. Not sure how it will work for other shapes.
 
 Here is what the cloud looked like after the pipeline:
 
@@ -35,8 +32,7 @@ Here is what the cloud looked like after the pipeline:
 
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
 
-I used the same Euclidean Clutering that was given to us a sample.  For the project as opposed to the exercises, 
-I had to mess around with the values a lot more until I got things that worked.
+Euclidean clustering was done. A lot of trial and error was required to find hyperparameters.
 
 Here is what the cloud looked like after the pipeline:
 
@@ -44,19 +40,23 @@ Here is what the cloud looked like after the pipeline:
 
 #### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
 
-Here are the settings I used to create my SVM:
+To create SVM:
 
-Pictures: 800
+Pictures: 800 per object
 
 Bins (Color & Normals): 64
 
-RGB vs HST: RGB
+RGB vs HSV: RGB as HSV seemed to be overfitting.
 
 Total Features: 6400
+
 
 Here's the output of the training:
 
 ![Training](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/training.png)
+
+I have a suspicion that the model is overfitting.
+
 ![Figure_1](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/figure_1.png)
 ![Figure_2](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/figure_2.png)
 
