@@ -83,7 +83,7 @@ World 2 100%:
 
 YAML File: [Link!](https://raw.githubusercontent.com/priteshgudge/pick_place_3dperception/master/pr2_robot/scripts/output_files/output_2.yaml)
 
-World 3 87.5%:
+World 3 87.5%: Glue is incorrectly identified as biscuits.
 
 ![World3](https://github.com/priteshgudge/pick_place_3dperception/raw/master/images/world3.png)
 
